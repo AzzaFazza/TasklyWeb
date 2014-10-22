@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script src="http://localhost:9000/assets/lib/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:9000/assets/lib/sweet-alert.css">
+    <meta charset="UTF-8">
+    <title>Failure</title>
+</head>
+<body>
+
+    <a href="http://localhost:9000/assets/index.html"><h1>Try Again</h1></a>
+
+    <script type="text/javascript">
+    window.onload = function(){
+        swal({   title: "Error!",   text: "Login Failed!",   type: "error",   confirmButtonText: "Try Again" });
+    }
+</script>
+</body>
+</html>

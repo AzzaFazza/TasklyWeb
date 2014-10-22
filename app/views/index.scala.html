@@ -1,0 +1,78 @@
+@(tasks: List[Task])
+<html>
+<head>
+    <title>Taskly</title>
+    <!--<meta http-equiv="refresh" content="1">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <!-- Popups -->
+    <link rel="script" href="http://localhost:9000/assets/javascripts/jquery.bpopup.min.js" >
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/myStyle.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/buttons.css">
+
+    <!-- Sweet Alert -->
+    <script src="http://localhost:9000/assets/lib/sweet-alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:9000/assets/lib/sweet-alert.css">
+</head>
+
+<body>
+<header class="main-header">
+   <a href="#"><h1 style="padding-top: 25px; color: #ffffff !important; font-size: 18px;">Taskly</h1></a>
+    <nav>
+        <ul>
+            <li>
+                Add Task
+                <img src="/assets/images/add.png" style="width: 35px; height:35px; padding: 4px;" onclick="popUp()"></img>
+            </li>
+           <a href="/assets/index.html"><li>Log Out</li></a>
+        </ul>
+    </nav>
+</header>
+<main class="content">
+<table>
+    <td class= "tableHeaderID"><h1 style="font-size: 16px">Task ID</h1></td>
+    <td class= "tableHeader"><h1 style="font-size: 16px">Task Name</h1></td>
+    @for(task<- tasks) {
+    <tr>
+        <td>
+            @task.taskId
+        </td>
+        <td>
+            @task.taskName
+            <!--<img src="assets/images/bg.jpg" style="width: 50px; height: 50px;"></img>-->
+            <div class="button-set" style="float: right">
+                <!--<a href="/amendEntry?id=@task.taskId" class="button grey tiny"><i class="icon-home"></i>Add Image</a>-->
+                <a href="/amendEntry?id=@task.taskId" class="button grey tiny"  onclick="myFunction()"><i class="icon-home" id="edit"></i>Edit</a>
+                <a href="/deleteEntry?id=@task.taskId" class="button red tiny"><i class="icon-home"></i>Delete</a>
+            </div>
+
+        </td>
+    </tr>
+    }
+</table>
+    </main>
+
+<!-- Prompt User for Input -->
+<script>
+    function myFunction() {
+        var task = prompt("Please enter your Task Name", "Task Name");
+        if (task != null) {
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+    <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+    <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<title>Taskly : Login</title>
+
+    <style type="text/css">
+        .headerText {
+            font-family: 'Raleway', sans-serif;
+            font-size: 48px;
+            color: #ffffff;
+
+        }
+    </style>
+</head>
+<body>
+<div class="background-image"></div>
+<div class="content">
+    <h1 class="headerText">Taskly</h1>
+<div class="login-form">
+    <form action="/submitName" method="POST">
+    <h1>Login</h1>
+    <div class="form-group ">
+        <input type="text" class="form-control" placeholder="Username" id="firstName" name="firstName">
+        <i class="fa fa-user"></i>
+    </div>
+
+        <!-- Password -->
+    <div class="form-group log-status">
+        <input type="password" class="form-control" placeholder="Password" id="passWord" name="passWord">
+        <i class="fa fa-lock"></i>
+    </div>
+    <button type="submit" class="button raised green" style="border: 1px; border-radius: 25px;"><div class="center" fit>OK</div>
+        <paper-ripple fit></paper-ripple></button>
+
+    </form>
+</div>
+</div>
+</body>
+</html>

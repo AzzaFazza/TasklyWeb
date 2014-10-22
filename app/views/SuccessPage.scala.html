@@ -1,0 +1,42 @@
+@(user : Person)
+<html>
+<head lang="en">
+    <title>Success</title>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .background-image {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        display: block;
+        background-image: url('/assets/images/bg2.jpg');
+        width: auto;
+        height: 100%;
+
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        }
+        .content {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        margin-left: 20px;
+        margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="background-image"></div>
+<div class="content">
+    <h1>Successfully Logged in!</h1>
+    <h2>Welcome: @user.getFirstName()</h2>
+    </div>
+</body>
+</html>
